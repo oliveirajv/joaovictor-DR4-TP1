@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonRegister = this.findViewById<Button>(R.id.buttonRegister)
         buttonRegister.setOnClickListener {
-            val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "text")
+            val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "text.txt")
             val fileOutputStream = FileOutputStream(file)
             val editTextUserInputText = this.findViewById<EditText>(R.id.editTextUserInput)
             fileOutputStream.write(editTextUserInputText.text.toString().toByteArray())
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonShow = this.findViewById<Button>(R.id.buttonShow)
         buttonShow.setOnClickListener {
-            val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "text")
+            val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "text.txt")
             val fileInputStream = FileInputStream(file)
             val bytes = fileInputStream.readBytes()
             fileInputStream.close()
