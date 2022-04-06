@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             fileOutputStream.write(editTextUserInputText.text.toString().toByteArray())
             fileOutputStream.close()
             editTextUserInputText.text = null
-
+        }
         val buttonShow = this.findViewById<Button>(R.id.buttonShow)
         buttonShow.setOnClickListener {
             val file = File(this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "text.txt")
@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             fileInputStream.close()
             val textViewFiles = this.findViewById<TextView>(R.id.textViewFiles)
             textViewFiles.text = String(bytes)
-        }
         }
     }
 }
